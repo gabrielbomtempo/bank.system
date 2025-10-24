@@ -15,7 +15,12 @@ public class Account {
         this.isBlocked = false;
     }
 
-
+    public String getUsername() {
+        return username;
+    }
+    public String getPassword() {
+        return this.password;
+    }
     public double getBalance() {
         return this.balance;
     }
@@ -51,7 +56,7 @@ public class Account {
         }
         if (this.password.equals(inputPassword)) {
             failedAttempts = 0;
-            System.out.println("Welcome" + username + ".");
+            System.out.println("Welcome " + username + ".");
             return true;
         } else {
             failedAttempts++;
