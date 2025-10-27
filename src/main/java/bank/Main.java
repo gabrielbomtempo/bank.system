@@ -21,8 +21,14 @@ public class Main {
         Bank bank = new Bank();
         bank.createAccount("Alice", "1234", 100.0);
         bank.createAccount("Bob", "3333", 200.0);
-        bank.createAccount("Alice", "0000", 300.0);
 
+        bank.login("Alice", "1234");
+        bank.login("Bob", "3333");
+        bank.login("Alice", "0000");
+        bank.login("Alice", "0000");
+        bank.login("Alice", "0000");
+        bank.login("Alice", "0000");
+        bank.login("Alice", "1234");
         Account found = bank.findAccount("Bob");
         if (found != null) {
             System.out.println(found.getUsername() + " balance and password: " + found.getBalance() + " " +found.getPassword());

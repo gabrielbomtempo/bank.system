@@ -25,4 +25,17 @@ public class Bank {
         Account newAccount = new Account(username, password, balance);
         accounts.add(newAccount);
     }
+    public boolean login(String username, String password) {
+        Account account = findAccount(username);
+        if (account == null) {
+            System.out.println("Welcome" + username);
+            return false;
+        }
+        if (account.isBlocked()) {
+            System.out.println("Account is blocked");
+            return false;
+        }
+        boolean success = account.checkPassword(password);
+        return success;
+    }
 }
